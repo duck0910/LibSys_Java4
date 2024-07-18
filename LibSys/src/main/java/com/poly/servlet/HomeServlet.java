@@ -14,7 +14,7 @@ public class HomeServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//kim ngan code 
+		// Chuyển hướng yêu cầu đến trang "index.jsp"
 		req.getRequestDispatcher("/views/index.jsp").forward(req, resp);
 		super.doGet(req, resp);
 	}
