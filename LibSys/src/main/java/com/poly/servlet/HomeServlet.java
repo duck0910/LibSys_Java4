@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet({"/house", "/pMuon", "/sach"})
+@WebServlet({"/house", "/pMuon", "/sach", "/nxb", "/theLoai"})
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,6 +31,17 @@ public class HomeServlet extends HttpServlet {
 		super.doGet(req, resp);
 	}
 	
+	protected void NXB(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/nxb.jsp").forward(req, resp);
+		//super.doGet(req, resp);
+	}
+	protected void TheLoai(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/theLoai.jsp").forward(req, resp);
+		//super.doGet(req, resp);
+	}
+	
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,6 +52,10 @@ public class HomeServlet extends HttpServlet {
 			this.PhieuMuon(req, resp);
 		} else if (uri.contains("sach")) {
 			this.Sach(req, resp);
+		} else if (uri.contains("nxb")) {
+			this.NXB(req, resp);
+		} else if (uri.contains("theLoai")) {
+			this.TheLoai(req, resp);
 		}
 
 //		req.setAttribute("users", dao.findAll());

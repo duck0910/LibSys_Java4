@@ -55,7 +55,7 @@
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/LibSys/..." class="menu-link">
+						<a href="/LibSys/theLoai" class="menu-link">
 							<div data-i18n="Basic">Thể loại</div>
 						</a>
 					</li>
@@ -71,7 +71,7 @@
 				</a>
 				<ul class="menu-sub">
 					<li class="menu-item">
-						<a href="/LibSys/..." class="menu-link">
+						<a href="/LibSys/nxb" class="menu-link">
 							<div data-i18n="BookList">Nhà xuất bản</div>
 						</a>
 					</li>
