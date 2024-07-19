@@ -23,13 +23,13 @@
 			<li class="menu-item">
 				<a href="/views" class="menu-link">
 					<i class="menu-icon tf-icons mdi mdi-home-outline"></i>
-					<div data-i18n="Analytics">Analytics</div>
+					<div data-i18n="Analytics">Trang chủ</div>
 				</a>
 			</li>
 
 			<!-- Header Data Management -->
 			<li class="menu-header fw-medium mt-4">
-				<span class="menu-header-text">Data Management</span>
+				<span class="menu-header-text"></span>
 			</li>
 			<!-- Header Data Management -->
 			<!-- Book Management -->
@@ -40,23 +40,23 @@
 				</a>
 				<ul class="menu-sub">
 					<li class="menu-item">
-						<a href="/book" class="menu-link">
-							<div data-i18n="Notifications">Management Books</div>
+						<a href="/LibSys/pMuon" class="menu-link">
+							<div data-i18n="Notifications">Phiếu mượn</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/author" class="menu-link">
-							<div data-i18n="Authentications">Authors</div>
+						<a href="/LibSys/sach" class="menu-link">
+							<div data-i18n="Authentications">Sách</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/book-languages" class="menu-link">
-							<div data-i18n="Connections">Book Languages</div>
+						<a href="/LibSys/tacGia" class="menu-link">
+							<div data-i18n="Connections">Tác giả</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/publisher" class="menu-link">
-							<div data-i18n="Basic">Publishers</div>
+						<a href="/LibSys/..." class="menu-link">
+							<div data-i18n="Basic">Thể loại</div>
 						</a>
 					</li>
 				</ul>
@@ -67,22 +67,22 @@
 			<li class="menu-item">
 				<a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
 					<i class="menu-icon tf-icons mdi mdi-basket-outline"></i>
-					<div data-i18n="Orders">Orders</div>
+					<div data-i18n="Orders">...</div>
 				</a>
 				<ul class="menu-sub">
 					<li class="menu-item">
-						<a href="/ordersApprovedList" class="menu-link">
-							<div data-i18n="BookList">Orders Approved List</div>
+						<a href="/LibSys/ordersApprovedList" class="menu-link">
+							<div data-i18n="BookList">Nhà xuất bản</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/orderApproval" class="menu-link">
-							<div data-i18n="Authors">Order Approval</div>
+						<a href="/LibSys/orderApproval" class="menu-link">
+							<div data-i18n="Authors">Độc giả</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/orderDetail" class="menu-link">
-							<div data-i18n="BookList">Order Detail</div>
+						<a href="/LibSys/orderDetail" class="menu-link">
+							<div data-i18n="BookList">Người dùng</div>
 						</a>
 					</li>
 				</ul>
@@ -98,17 +98,17 @@
 				<ul class="menu-sub">
 
 					<li class="menu-item">
-						<a href="/views/AdminManagerment" class="menu-link">
+						<a href="/LibSys/views/AdminManagerment" class="menu-link">
 							<div data-i18n="AddAdministrator">Admin Management</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/views/userManagerment" class="menu-link">
+						<a href="/LibSys/views/userManagerment" class="menu-link">
 							<div data-i18n="userManagerment">User Management</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/views/userView" class="menu-link">
+						<a href="/LibSys/views/userView" class="menu-link">
 							<div data-i18n="View">View</div>
 						</a>
 					</li>

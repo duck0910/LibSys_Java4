@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Add Administrator</title>
+<title>Author</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -30,7 +30,7 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon"
-	href="/assets/img/favicon/favicon.ico" />
+	href="views/static/assets/img/favicon/favicon.ico" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,32 +40,32 @@
 	rel="stylesheet" />
 
 <link rel="stylesheet"
-	href="/assets/vendor/fonts/materialdesignicons.css" />
+	href="views/static/assets/vendor/fonts/materialdesignicons.css" />
 
 <!-- Menu waves for no-customizer fix -->
 <link rel="stylesheet"
-	href="/assets/vendor/libs/node-waves/node-waves.css" />
+	href="views/static/assets/vendor/libs/node-waves/node-waves.css" />
 
 <!-- Core CSS -->
-<link rel="stylesheet" href="/assets/vendor/css/core.css"
+<link rel="stylesheet" href="views/static/assets/vendor/css/core.css"
 	class="template-customizer-core-css" />
-<link rel="stylesheet" href="/assets/vendor/css/theme-default.css"
+<link rel="stylesheet" href="views/static/assets/vendor/css/theme-default.css"
 	class="template-customizer-theme-css" />
-<link rel="stylesheet" href="/assets/css/demo.css" />
+<link rel="stylesheet" href="views/static/assets/css/demo.css" />
 
 <!-- Vendors CSS -->
 <link rel="stylesheet"
-	href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+	href="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 <link rel="stylesheet"
-	href="/assets/vendor/libs/apex-charts/apex-charts.css" />
+	href="views/static/assets/vendor/libs/apex-charts/apex-charts.css" />
 
 <!-- Page CSS -->
 
 <!-- Helpers -->
-<script src="/assets/vendor/js/helpers.js"></script>
+<script src="views/static/assets/vendor/js/helpers.js"></script>
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-<script src="/assets/js/config.js"></script>
+<script src="views/static/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -89,107 +89,114 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/admin/book-languages" modelAttribute="booklanguage">
+								<form action="/admin/author" modelAttribute="author">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
-											<h5 class="card-tile mb-0">Book Languages</h5>
+											<h5 class="card-tile mb-0">Authors</h5>
 										</div>
 										<div class="card-body">
 											<div class="mt-3">
-												<label for="" class="form-label">LanguageID</label> 
-												<input class="form-control" path="languageId" />
+												<label for="" class="form-label">AuthorsID</label>
+												<input class="form-control" path="authorId" />
 											</div>
 											<div class="mt-3">
-												<label for="" class="form-label">LanguageCode</label> 
-												<input class="form-control" path="languageCode" />
-											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">LanguageName</label> 
-												<input class="form-control" path="languageName" />
+												<label for="" class="form-label">AuthorsName</label>
+												<input class="form-control" path="authorName" />
 											</div>
 											<div class="mt-3">
 												<button class="btn btn-primary"
-													formaction="/admin/book-languages/create">Create</button>
+													formaction="/admin/author/create">Create</button>
 												<button class="btn btn-warning"
-													formaction="/admin/book-languages/update">Update</button>
+													formaction="/admin/author/update">Update</button>
 											</div>
+
 										</div>
 									</div>
 								</form>
 							</div>
-
+							<hr>
 							<div class="col-lg-12">
-								<div class="card mt-3">
-									<div class="card-header">
-										<h5 class="card-tile mb-0">Book Languages List</h5>
+								<div class="row">
+									<div class="col-sm-1">
+										<a class="btn btn-secondary btn-sm"
+											href="/admin/author/ascName">A-Z</a>
 									</div>
-									<div class="card-body">
-										<table class="table table-striped">
-											<thead>
+									<div class="col-sm-1">
+										<a class="btn btn-secondary btn-sm"
+											href="/admin/author/descName">Z-A</a>
+									</div>
+									
+								</div>
+							</div>
+
+							<div class="card mt-3">
+								<div class="card-header">
+									<h5 class="card-tile mb-0">Authors List</h5>
+								</div>
+								<div class="card-body">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Name</th>
+										</thead>
+										<tbody>
+											<c:forEach var="author" items="${authors}">
 												<tr>
-													<th>ID</th>
-													<th>Code</th>
-													<th>Name</th>
-													<th>Actions</th>
-											</thead>
-											<tbody>
-												<c:forEach var="booklanguage" items="${booklanguages}">
-													<tr>
-														<td>${booklanguage.languageId}</td>
-														<td>${booklanguage.languageCode}</td>
-														<td>${booklanguage.languageName}</td>
-														<td><a
-															href="/admin/book-languages/delete/${booklanguage.languageId}"
-															class="btn btn-sm btn-danger">Delete</a> <a
-															href="/admin/book-languages/edit/${booklanguage.languageId}"
-															class="btn btn-sm btn-success">Edit</a></td>
-													</tr>
-												</c:forEach>
-												<!-- More user rows go here -->
-											</tbody>
-										</table>
-									</div>
+													<td>${author.authorId}</td>
+													<td>${author.authorName}</td>
+
+													<td><a href="/admin/author/delete/${author.authorId}"
+														class="btn btn-sm btn-danger">Delete</a> <a
+														href="/admin/author/edit/${author.authorId}"
+														class="btn btn-sm btn-success">Edit</a></td>
+												</tr>
+											</c:forEach>
+											<!-- More user rows go here -->
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- / Content -->
-
-					<!-- Footer -->
-
-					<!-- / Footer -->
-					<div class="content-backdrop fade"></div>
 				</div>
-				<!-- Content wrapper -->
-			</div>
-			<!-- / Layout page -->
-		</div>
+				<!-- / Content -->
 
-		<!-- Overlay -->
-		<div class="layout-overlay layout-menu-toggle"></div>
+				<!-- Footer -->
+
+				<!-- / Footer -->
+				<div class="content-backdrop fade"></div>
+			</div>
+			<!-- Content wrapper -->
+		</div>
+		<!-- / Layout page -->
+	</div>
+
+	<!-- Overlay -->
+	<div class="layout-overlay layout-menu-toggle"></div>
 	</div>
 	<!-- / Layout wrapper -->
 
 	<!-- Core JS -->
 	<!-- build:js assets/vendor/js/core.js -->
-	<script src="/assets/vendor/libs/jquery/jquery.js"></script>
-	<script src="/assets/vendor/libs/popper/popper.js"></script>
-	<script src="/assets/vendor/js/bootstrap.js"></script>
-	<script src="/assets/vendor/libs/node-waves/node-waves.js"></script>
+	<script src="views/static/assets/vendor/libs/jquery/jquery.js"></script>
+	<script src="views/static/assets/vendor/libs/popper/popper.js"></script>
+	<script src="views/static/assets/vendor/js/bootstrap.js"></script>
+	<script src="views/static/assets/vendor/libs/node-waves/node-waves.js"></script>
 	<script
-		src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="/assets/vendor/js/menu.js"></script>
+		src="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+	<script src="views/static/assets/vendor/js/menu.js"></script>
 
 	<!-- endbuild -->
 
 	<!-- Vendors JS -->
-	<script src="/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+	<script src="views/static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
 	<!-- Main JS -->
-	<script src="/assets/js/main.js"></script>
+	<script src="views/static/assets/js/main.js"></script>
 
 	<!-- Page JS -->
-	<script src="/assets/js/dashboards-analytics.js"></script>
+	<script src="views/static/assets/js/dashboards-analytics.js"></script>
 
 	<!-- Place this tag in your head or just before your close body tag. -->
 	<script src="https://buttons.github.io/buttons.js"></script>
