@@ -89,27 +89,49 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/admin/author" modelAttribute="author">
+								<form action="/LibSys/tacGia" modelAttribute="tacgia">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
 											<h5 class="card-tile mb-0">Authors</h5>
 										</div>
 										<div class="card-body">
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsID</label>
-												<input class="form-control" path="authorId" />
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Mã </label>
+														<input class="form-control" path="Id" />
+													</div>
+													<div class="mt-3">
+														<label for="" class="form-label">Giới tính</label>
+														<input class="form-control" type="radio" >Nam
+														<input class="form-control" type="radio" >Nữ
+													</div>
+													<div class="mt-3">
+														<label for="" class="form-label">Email</label>
+														<input class="form-control" path="email" />
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Tên tác giả</label>
+														<input class="form-control" path="name" />
+													</div>
+													<div class="mt-3">
+														<label for="" class="form-label">Ngày sinh</label>
+														<input class="form-control" path="ngaySinh" type="date"/>
+													</div>
+												</div>
+												<div class="mt-3">
+													<button class="btn btn-primary"
+														formaction="/LibSys/tacGia/create">Create</button>
+													<button class="btn btn-warning"
+														formaction="/LibSys/tacGia/update">Update</button>
+													<button class="btn btn-warning"
+														formaction="/LibSys/tacGia/delete">Delete</button>
+													<button class="btn btn-warning"
+														formaction="/LibSys/tacGia/reset">Reset</button>
+												</div>
 											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsName</label>
-												<input class="form-control" path="authorName" />
-											</div>
-											<div class="mt-3">
-												<button class="btn btn-primary"
-													formaction="/admin/author/create">Create</button>
-												<button class="btn btn-warning"
-													formaction="/admin/author/update">Update</button>
-											</div>
-
 										</div>
 									</div>
 								</form>
@@ -119,11 +141,11 @@
 								<div class="row">
 									<div class="col-sm-1">
 										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/ascName">A-Z</a>
+											href="/LibSys/tacGia/ascName">A-Z</a>
 									</div>
 									<div class="col-sm-1">
 										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/descName">Z-A</a>
+											href="/LibSys/tacGia/descName">Z-A</a>
 									</div>
 									
 								</div>
@@ -137,18 +159,24 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th>ID</th>
-												<th>Name</th>
+												<th>Mã</th>
+												<th>Tên tác giả</th>
+												<th>Giới tính</th>
+												<th>Ngày sinh</th>
+												<th>Email</th>
+												<th></th>
+											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="author" items="${authors}">
+											<c:forEach var="tacgia" items="">
 												<tr>
-													<td>${author.authorId}</td>
-													<td>${author.authorName}</td>
-
-													<td><a href="/admin/author/delete/${author.authorId}"
-														class="btn btn-sm btn-danger">Delete</a> <a
-														href="/admin/author/edit/${author.authorId}"
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a
+														href="/LibSys/tacGia/edit/${author.authorId}"
 														class="btn btn-sm btn-success">Edit</a></td>
 												</tr>
 											</c:forEach>

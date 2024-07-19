@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet({"/house", "/pMuon", "/sach"})
+@WebServlet({"/house", "/pMuon", "/sach", "/tacGia"})
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,15 +22,20 @@ public class HomeServlet extends HttpServlet {
 	protected void PhieuMuon(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
 		req.getRequestDispatcher("/views/phieuMuon.jsp").forward(req, resp);
-		super.doGet(req, resp);
+//		super.doGet(req, resp);
 	}
 	
 	protected void Sach(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
 		req.getRequestDispatcher("/views/sach.jsp").forward(req, resp);
-		super.doGet(req, resp);
+//		super.doGet(req, resp);
 	}
 	
+	protected void tacGia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/tacGia.jsp").forward(req, resp);
+//		super.doGet(req, resp);
+	}
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,6 +46,8 @@ public class HomeServlet extends HttpServlet {
 			this.PhieuMuon(req, resp);
 		} else if (uri.contains("sach")) {
 			this.Sach(req, resp);
+		} else if (uri.contains("tacGia")) {
+			this.tacGia(req, resp);
 		}
 
 //		req.setAttribute("users", dao.findAll());
