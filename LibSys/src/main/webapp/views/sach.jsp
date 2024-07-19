@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Author</title>
+<title>Book</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -89,27 +89,67 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/admin/author" modelAttribute="author">
+								<form action="/LibSys/sach" modelAttribute="sach">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
-											<h5 class="card-tile mb-0">Authors</h5>
+											<h5 class="card-tile mb-0">Books</h5>
 										</div>
 										<div class="card-body">
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsID</label>
-												<input class="form-control" path="authorId" />
+											<div class="row">
+												<div class="col-lg-3">
+													<img alt="" src="">
+												</div>
+												<div class="col-lg-9">
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="mt-3">
+																<label for="" class="form-label">Mã sách</label>
+																<input class="form-control" path="Id" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">Tác giả</label>
+																<input class="form-control" path="authorName" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">Thể loại</label>
+																<input class="form-control" path="authorName" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">Ngày nhập</label>
+																<input class="form-control" path="date" type="date"/>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="mt-3">
+																<label for="" class="form-label">Tên sách</label>
+																<input class="form-control" path="name" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">NXB</label>
+																<input class="form-control" path="authorName" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">Số lượng</label>
+																<input class="form-control" path="authorName" />
+															</div>
+															<div class="mt-3">
+																<label for="" class="form-label">Vị trí</label>
+																<input class="form-control" path="authorName" />
+															</div>
+														</div>
+														<div class="mt-3">
+															<button class="btn btn-primary"
+																formaction="/LibSys/sach/create">Create</button>
+															<button class="btn btn-warning"
+																formaction="/LibSys/sach/update">Update</button>
+															<button class="btn btn-warning"
+																formaction="/LibSys/sach/delete">Delete</button>
+															<button class="btn btn-warning"
+																formaction="/LibSys/sach/reset">Reset</button>
+														</div>
+													</div>
+												</div>
 											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsName</label>
-												<input class="form-control" path="authorName" />
-											</div>
-											<div class="mt-3">
-												<button class="btn btn-primary"
-													formaction="/admin/author/create">Create</button>
-												<button class="btn btn-warning"
-													formaction="/admin/author/update">Update</button>
-											</div>
-
 										</div>
 									</div>
 								</form>
@@ -119,11 +159,11 @@
 								<div class="row">
 									<div class="col-sm-1">
 										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/ascName">A-Z</a>
+											href="/LibSys/sach/ascName">A-Z</a>
 									</div>
 									<div class="col-sm-1">
 										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/descName">Z-A</a>
+											href="/LibSys/sach/descName">Z-A</a>
 									</div>
 									
 								</div>
@@ -131,24 +171,38 @@
 
 							<div class="card mt-3">
 								<div class="card-header">
-									<h5 class="card-tile mb-0">Authors List</h5>
+									<h5 class="card-tile mb-0">Books List</h5>
 								</div>
 								<div class="card-body">
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th>ID</th>
-												<th>Name</th>
+												<th>Mã</th>
+												<th>Tên sách</th>
+												<th>Tác giả</th>
+												<th>NXB</th>
+												<th>Thể loại</th>
+												<th>Số lượng</th>
+												<th>Ngày nhập</th>
+												<th>Vị trí</th>
+												<th>Hình</th>
+												<th></th>
+											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="author" items="${authors}">
+											<c:forEach var="sach" items="">
 												<tr>
-													<td>${author.authorId}</td>
-													<td>${author.authorName}</td>
-
-													<td><a href="/admin/author/delete/${author.authorId}"
-														class="btn btn-sm btn-danger">Delete</a> <a
-														href="/admin/author/edit/${author.authorId}"
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a
+														href="/LibSys/sach/edit/${author.authorId}"
 														class="btn btn-sm btn-success">Edit</a></td>
 												</tr>
 											</c:forEach>
