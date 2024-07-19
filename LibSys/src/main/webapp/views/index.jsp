@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact"
-	dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+	dir="ltr" data-theme="theme-default" data-assets-path="views/static/assets/"
 	data-template="vertical-menu-template-free">
 
 <head>
@@ -30,7 +30,7 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon"
-	href="../assets/img/favicon/favicon.ico" />
+	href="views/static/assets/img/favicon/favicon.ico" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,32 +40,32 @@
 	rel="stylesheet" />
 
 <link rel="stylesheet"
-	href="../assets/vendor/fonts/materialdesignicons.css" />
+	href="views/static/assets/vendor/fonts/materialdesignicons.css" />
 
 <!-- Menu waves for no-customizer fix -->
 <link rel="stylesheet"
-	href="../assets/vendor/libs/node-waves/node-waves.css" />
+	href="views/static/assets/vendor/libs/node-waves/node-waves.css" />
 
 <!-- Core CSS -->
-<link rel="stylesheet" href="../assets/vendor/css/core.css"
+<link rel="stylesheet" href="views/static/assets/vendor/css/core.css"
 	class="template-customizer-core-css" />
-<link rel="stylesheet" href="../assets/vendor/css/theme-default.css"
+<link rel="stylesheet" href="views/static/assets/vendor/css/theme-default.css"
 	class="template-customizer-theme-css" />
-<link rel="stylesheet" href="../assets/css/demo.css" />
+<link rel="stylesheet" href="views/static/assets/css/demo.css" />
 
 <!-- Vendors CSS -->
 <link rel="stylesheet"
-	href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+	href="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 <link rel="stylesheet"
-	href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+	href="views/static/assets/vendor/libs/apex-charts/apex-charts.css" />
 
 <!-- Page CSS -->
 
 <!-- Helpers -->
-<script src="../assets/vendor/js/helpers.js"></script>
+<script src="views/static/assets/vendor/js/helpers.js"></script>
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-<script src="../assets/js/config.js"></script>
+<script src="views/static/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -99,12 +99,12 @@
 										<a href="javascript:;" class="btn btn-sm btn-primary">View
 											Sales</a>
 									</div>
-									<img src="../assets/img/icons/misc/triangle-light.png"
+									<img src="views/static/assets/img/icons/misc/triangle-light.png"
 										class="scaleX-n1-rtl position-absolute bottom-0 end-0"
 										width="166" alt="triangle background"
 										data-app-light-img="icons/misc/triangle-light.png"
 										data-app-dark-img="icons/misc/triangle-dark.png" /> <img
-										src="../assets/img/illustrations/trophy.png"
+										src="views/static/assets/img/illustrations/trophy.png"
 										class="scaleX-n1-rtl position-absolute bottom-0 end-0 me-4 mb-4 pb-2"
 										width="83" alt="view sales" />
 								</div>
@@ -268,7 +268,7 @@
 										<ul class="p-0 m-0">
 											<li class="d-flex mb-4 pb-md-2">
 												<div class="avatar flex-shrink-0 me-3">
-													<img src="../assets/img/icons/misc/zipcar.png" alt="zipcar"
+													<img src="views/static/assets/img/icons/misc/zipcar.png" alt="zipcar"
 														class="rounded" />
 												</div>
 												<div
@@ -289,7 +289,7 @@
 											</li>
 											<li class="d-flex mb-4 pb-md-2">
 												<div class="avatar flex-shrink-0 me-3">
-													<img src="../assets/img/icons/misc/bitbank.png"
+													<img src="views/static/assets/img/icons/misc/bitbank.png"
 														alt="bitbank" class="rounded" />
 												</div>
 												<div
@@ -310,7 +310,7 @@
 											</li>
 											<li class="d-flex mb-md-3">
 												<div class="avatar flex-shrink-0 me-3">
-													<img src="../assets/img/icons/misc/aviato.png" alt="aviato"
+													<img src="views/static/assets/img/icons/misc/aviato.png" alt="aviato"
 														class="rounded" />
 												</div>
 												<div
@@ -584,7 +584,7 @@
 												<ul class="p-0 m-0">
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/gumroad.png"
+															<img src="views/static/assets/img/icons/payments/gumroad.png"
 																class="img-fluid" alt="gumroad" height="30" width="30" />
 														</div>
 														<div
@@ -598,7 +598,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/mastercard-2.png"
+															<img src="views/static/assets/img/icons/payments/mastercard-2.png"
 																class="img-fluid" alt="mastercard" height="30"
 																width="30" />
 														</div>
@@ -613,7 +613,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/stripes.png"
+															<img src="views/static/assets/img/icons/payments/stripes.png"
 																class="img-fluid" alt="stripes" height="30" width="30" />
 														</div>
 														<div
@@ -627,7 +627,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/american-bank.png"
+															<img src="views/static/assets/img/icons/payments/american-bank.png"
 																class="img-fluid" alt="american" height="30" width="30" />
 														</div>
 														<div
@@ -641,7 +641,7 @@
 													</li>
 													<li class="d-flex align-items-center">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/citi.png"
+															<img src="views/static/assets/img/icons/payments/citi.png"
 																class="img-fluid" alt="citi" height="30" width="30" />
 														</div>
 														<div
@@ -666,7 +666,7 @@
 												<ul class="p-0 m-0">
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/brands/google.png"
+															<img src="views/static/assets/img/icons/brands/google.png"
 																class="img-fluid" alt="google" height="30" width="30" />
 														</div>
 														<div
@@ -680,7 +680,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/brands/github.png"
+															<img src="views/static/assets/img/icons/brands/github.png"
 																class="img-fluid" alt="github" height="30" width="30" />
 														</div>
 														<div
@@ -694,7 +694,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/brands/slack.png"
+															<img src="views/static/assets/img/icons/brands/slack.png"
 																class="img-fluid" alt="slack" height="30" width="30" />
 														</div>
 														<div
@@ -708,7 +708,7 @@
 													</li>
 													<li class="d-flex mb-4 align-items-center pb-2">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/payments/digital-ocean.png"
+															<img src="views/static/assets/img/icons/payments/digital-ocean.png"
 																class="img-fluid" alt="digital" height="30" width="30" />
 														</div>
 														<div
@@ -722,7 +722,7 @@
 													</li>
 													<li class="d-flex align-items-center">
 														<div class="flex-shrink-0 me-3">
-															<img src="../assets/img/icons/brands/aws.png"
+															<img src="views/static/assets/img/icons/brands/aws.png"
 																class="img-fluid" alt="aws" height="30" width="30" />
 														</div>
 														<div
@@ -762,24 +762,24 @@
 
 	<!-- Core JS -->
 	<!-- build:js assets/vendor/js/core.js -->
-	<script src="../assets/vendor/libs/jquery/jquery.js"></script>
-	<script src="../assets/vendor/libs/popper/popper.js"></script>
-	<script src="../assets/vendor/js/bootstrap.js"></script>
-	<script src="../assets/vendor/libs/node-waves/node-waves.js"></script>
+	<script src="views/static/assets/vendor/libs/jquery/jquery.js"></script>
+	<script src="views/static/assets/vendor/libs/popper/popper.js"></script>
+	<script src="views/static/assets/vendor/js/bootstrap.js"></script>
+	<script src="views/static/assets/vendor/libs/node-waves/node-waves.js"></script>
 	<script
-		src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="../assets/vendor/js/menu.js"></script>
+		src="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+	<script src="views/static/assets/vendor/js/menu.js"></script>
 
 	<!-- endbuild -->
 
 	<!-- Vendors JS -->
-	<script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+	<script src="views/static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
 	<!-- Main JS -->
-	<script src="../assets/js/main.js"></script>
+	<script src="views/static/assets/js/main.js"></script>
 
 	<!-- Page JS -->
-	<script src="../assets/js/dashboards-analytics.js"></script>
+	<script src="views/static/assets/js/dashboards-analytics.js"></script>
 
 	<!-- Place this tag in your head or just before your close body tag. -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>

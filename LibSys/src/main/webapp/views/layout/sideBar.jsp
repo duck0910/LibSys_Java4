@@ -8,8 +8,8 @@
 <body>
 	<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 		<div class="app-brand demo">
-			<a href="admin" class="app-brand-link">
-				<span class="app-brand-text demo menu-text fw-semibold ms-2" id="app-brand-name">Bomie</span>
+			<a href="views" class="app-brand-link">
+				<span class="app-brand-text demo menu-text fw-semibold ms-2" id="app-brand-name">LibSys</span>
 			</a>
 			<a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
 				<i class="mdi menu-toggle-icon d-xl-block align-middle mdi-20px"></i>
@@ -21,7 +21,7 @@
 		<ul class="menu-inner position-relative">
 			<!-- Analytics -->
 			<li class="menu-item">
-				<a href="/admin" class="menu-link">
+				<a href="/views" class="menu-link">
 					<i class="menu-icon tf-icons mdi mdi-home-outline"></i>
 					<div data-i18n="Analytics">Analytics</div>
 				</a>
@@ -40,22 +40,22 @@
 				</a>
 				<ul class="menu-sub">
 					<li class="menu-item">
-						<a href="/admin/book" class="menu-link">
+						<a href="/book" class="menu-link">
 							<div data-i18n="Notifications">Management Books</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/admin/author" class="menu-link">
+						<a href="/author" class="menu-link">
 							<div data-i18n="Authentications">Authors</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/admin/book-languages" class="menu-link">
+						<a href="/book-languages" class="menu-link">
 							<div data-i18n="Connections">Book Languages</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/admin/publisher" class="menu-link">
+						<a href="/publisher" class="menu-link">
 							<div data-i18n="Basic">Publishers</div>
 						</a>
 					</li>
@@ -98,17 +98,17 @@
 				<ul class="menu-sub">
 
 					<li class="menu-item">
-						<a href="/admin/AdminManagerment" class="menu-link">
+						<a href="/views/AdminManagerment" class="menu-link">
 							<div data-i18n="AddAdministrator">Admin Management</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/admin/userManagerment" class="menu-link">
+						<a href="/views/userManagerment" class="menu-link">
 							<div data-i18n="userManagerment">User Management</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/admin/userView" class="menu-link">
+						<a href="/views/userView" class="menu-link">
 							<div data-i18n="View">View</div>
 						</a>
 					</li>
@@ -142,7 +142,7 @@
 					<ul class="dropdown-menu ps-2">
 
 						<li>
-							<a href="/admin/AdminManagerment" class="menu-link dropdown-item">Edit profile
+							<a href="/views/AdminManagerment" class="menu-link dropdown-item">Edit profile
 								<!-- <div data-i18n="AddAdministrator"></div> -->
 							</a>
 						</li>
