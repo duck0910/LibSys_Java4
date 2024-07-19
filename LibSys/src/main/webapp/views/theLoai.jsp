@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact"
@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Author</title>
+<title>Thể loại</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -49,7 +49,8 @@
 <!-- Core CSS -->
 <link rel="stylesheet" href="views/static/assets/vendor/css/core.css"
 	class="template-customizer-core-css" />
-<link rel="stylesheet" href="views/static/assets/vendor/css/theme-default.css"
+<link rel="stylesheet"
+	href="views/static/assets/vendor/css/theme-default.css"
 	class="template-customizer-theme-css" />
 <link rel="stylesheet" href="views/static/assets/css/demo.css" />
 
@@ -92,22 +93,30 @@
 								<form action="/admin/author" modelAttribute="author">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
-											<h5 class="card-tile mb-0">Authors</h5>
+											<h5 class="card-tile mb-0">Thể loại</h5>
 										</div>
 										<div class="card-body">
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsID</label>
-												<input class="form-control" path="authorId" />
-											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsName</label>
-												<input class="form-control" path="authorName" />
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Mã Thể loại</label> <input
+															class="form-control" path="authorId" />
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Tên Thể loại</label> <input
+															class="form-control" path="authorName" />
+													</div>
+												</div>
 											</div>
 											<div class="mt-3">
 												<button class="btn btn-primary"
-													formaction="/admin/author/create">Create</button>
+													formaction="/admin/author/create">Thêm mới</button>
 												<button class="btn btn-warning"
-													formaction="/admin/author/update">Update</button>
+													formaction="/admin/author/update">Cập nhật</button>
+												<button class="btn btn-primary"
+													formaction="/admin/author/delete">Xóa</button>
 											</div>
 
 										</div>
@@ -115,30 +124,17 @@
 								</form>
 							</div>
 							<hr>
-							<div class="col-lg-12">
-								<div class="row">
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/ascName">A-Z</a>
-									</div>
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/descName">Z-A</a>
-									</div>
-									
-								</div>
-							</div>
 
 							<div class="card mt-3">
 								<div class="card-header">
-									<h5 class="card-tile mb-0">Authors List</h5>
+									<h5 class="card-tile mb-0">Danh sách Thể loại</h5>
 								</div>
 								<div class="card-body">
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th>ID</th>
-												<th>Name</th>
+												<th>Mã</th>
+												<th>Tên</th>
 										</thead>
 										<tbody>
 											<c:forEach var="author" items="${authors}">

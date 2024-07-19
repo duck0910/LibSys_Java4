@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Author</title>
+<title>Độc giả</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -92,22 +92,48 @@
 								<form action="/admin/author" modelAttribute="author">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
-											<h5 class="card-tile mb-0">Authors</h5>
+											<h5 class="card-tile mb-0">Độc Giả</h5>
 										</div>
 										<div class="card-body">
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsID</label>
-												<input class="form-control" path="authorId" />
-											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsName</label>
-												<input class="form-control" path="authorName" />
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Mã độc giả</label> <input
+															class="form-control" path="publisherId" />
+														<label for="" class="form-label">Địa chỉ</label> <input
+															class="form-control" path="publisherId" />
+														<label for="" class="form-label">Điện thoại</label> <input
+															class="form-control" path="publisherId" />
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="mt-3">
+														<label for="" class="form-label">Tên độc giả</label> <input
+															class="form-control" path="publisherName" />
+														<div>
+														<label for="" class="form-label">Giới tính</label> <br>
+														<div class="form-check form-check-inline pt-1">				
+														<input class="form-check-input" type="radio" name="gioiTinh"
+															id="Nam" value="Nam">
+														<label class="form-check-label" for="Nam">Nam</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="gioiTinh"
+															id="Nu" value="Nu">
+														<label class="form-check-label" for="Nu">Nữ</label></div>
+													</div>
+													<label for="" class="form-label">Email</label> <input
+															class="form-control" path="publisherName" />
+													</div>
+												</div>
 											</div>
 											<div class="mt-3">
 												<button class="btn btn-primary"
-													formaction="/admin/author/create">Create</button>
+													formaction="/admin/author/create">Thêm mới</button>
 												<button class="btn btn-warning"
-													formaction="/admin/author/update">Update</button>
+													formaction="/admin/author/update">Cập nhật</button>
+												<button class="btn btn-primary"
+													formaction="/admin/author/delete">Xóa</button>
 											</div>
 
 										</div>
@@ -115,30 +141,21 @@
 								</form>
 							</div>
 							<hr>
-							<div class="col-lg-12">
-								<div class="row">
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/ascName">A-Z</a>
-									</div>
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/descName">Z-A</a>
-									</div>
-									
-								</div>
-							</div>
-
+							
 							<div class="card mt-3">
 								<div class="card-header">
-									<h5 class="card-tile mb-0">Authors List</h5>
+									<h5 class="card-tile mb-0">Danh sách Độc giả</h5>
 								</div>
 								<div class="card-body">
 									<table class="table table-striped">
 										<thead>
-											<tr>
-												<th>ID</th>
-												<th>Name</th>
+											<tr></tr>
+												<th>Mã</th>
+												<th>Họ Tên</th>
+												<th>Địa chỉ</th>
+												<th>Giới tính</th>
+												<th>Điện thoại</th>
+												<th>Email</th>
 										</thead>
 										<tbody>
 											<c:forEach var="author" items="${authors}">
