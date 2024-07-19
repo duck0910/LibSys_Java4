@@ -71,17 +71,17 @@
 				</a>
 				<ul class="menu-sub">
 					<li class="menu-item">
-						<a href="/LibSys/ordersApprovedList" class="menu-link">
+						<a href="/LibSys/..." class="menu-link">
 							<div data-i18n="BookList">Nhà xuất bản</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/LibSys/orderApproval" class="menu-link">
+						<a href="/LibSys/..." class="menu-link">
 							<div data-i18n="Authors">Độc giả</div>
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/LibSys/orderDetail" class="menu-link">
+						<a href="/LibSys/..." class="menu-link">
 							<div data-i18n="BookList">Người dùng</div>
 						</a>
 					</li>
