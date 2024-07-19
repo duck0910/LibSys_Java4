@@ -18,4 +18,11 @@ public class HomeServlet extends HttpServlet {
 		req.getRequestDispatcher("/views/index.jsp").forward(req, resp);
 		super.doGet(req, resp);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
+ 
+	 
 }
