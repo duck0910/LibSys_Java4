@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Author</title>
+<title>Phiếu Mượn</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -88,73 +88,251 @@
 					<!-- Content -->
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-12">
-								<form action="/admin/author" modelAttribute="author">
-									<div class="card mt-3 mb-3">
-										<div class="card-header">
-											<h5 class="card-tile mb-0">Authors</h5>
-										</div>
-										<div class="card-body">
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsID</label>
-												<input class="form-control" path="authorId" />
-											</div>
-											<div class="mt-3">
-												<label for="" class="form-label">AuthorsName</label>
-												<input class="form-control" path="authorName" />
-											</div>
-											<div class="mt-3">
-												<button class="btn btn-primary"
-													formaction="/admin/author/create">Create</button>
-												<button class="btn btn-warning"
-													formaction="/admin/author/update">Update</button>
-											</div>
-
-										</div>
+							<div class="col-lg-4">
+								<div class="card mt-3">
+									<div class="card-header">
+										<h5 class="card-tile mb-0">Danh sách phiếu mượn</h5>
 									</div>
-								</form>
-							</div>
-							<hr>
-							<div class="col-lg-12">
-								<div class="row">
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/ascName">A-Z</a>
-									</div>
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/admin/author/descName">Z-A</a>
-									</div>
-									
-								</div>
-							</div>
-
-							<div class="card mt-3">
-								<div class="card-header">
-									<h5 class="card-tile mb-0">Authors List</h5>
-								</div>
-								<div class="card-body">
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>ID</th>
-												<th>Name</th>
-										</thead>
-										<tbody>
-											<c:forEach var="author" items="${authors}">
+									<div class="card-body">
+										<table class="table table-striped">
+											<thead>
 												<tr>
-													<td>${author.authorId}</td>
-													<td>${author.authorName}</td>
-
-													<td><a href="/admin/author/delete/${author.authorId}"
-														class="btn btn-sm btn-danger">Delete</a> <a
-														href="/admin/author/edit/${author.authorId}"
-														class="btn btn-sm btn-success">Edit</a></td>
+													<th scope="col">Tên độc giả</th>
+													<th scope="col">Ngày mượn</th>
+													<th scope="col">Trạng thái</th>
+													<th>#</th>
 												</tr>
-											</c:forEach>
-											<!-- More user rows go here -->
-										</tbody>
-									</table>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+
+														<p class="d-flex align-items-center">Dương
+															Tuyết
+															Ngân</p>
+
+													</td>
+													<td>
+														<div>
+															<p class="d-flex align-items-center">23/06/2024</p>
+														</div>
+													</td>
+													<td>
+														<p class="d-flex align-items-center">Chưa trả</p>
+													</td>
+													<td>
+														<div class="d-grid gap-2">
+															<a href="/admin/book-languages/delete/${booklanguage.languageId}"
+																class="btn btn-sm btn-danger">Xóa</a> <a
+																href="/admin/book-languages/edit/${booklanguage.languageId}"
+																class="btn btn-sm btn-success">Sửa</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+
+													<td>Nguyễn Thanh Vinh</td>
+													<td>10/07/2024</td>
+													<td>Chưa trả</td>
+													<td>
+														<div class="d-grid gap-2">
+															<a href="/admin/book-languages/delete/${booklanguage.languageId}"
+																class="btn btn-sm btn-danger">Xóa</a> <a
+																href="/admin/book-languages/edit/${booklanguage.languageId}"
+																class="btn btn-sm btn-success">Sửa</a>
+														</div>
+												</tr>
+												<tr class="position-relative">
+													<td>Đặng Thị Kim Cương</td>
+													<td>14/05/2024</td>
+													<td>Đã trả</td>
+													<td>
+														<div class="d-grid gap-2">
+															<a href="/admin/book-languages/delete/${booklanguage.languageId}"
+																class="btn btn-sm btn-danger">Xóa</a> <a
+																href="/admin/book-languages/edit/${booklanguage.languageId}"
+																class="btn btn-sm btn-success">Sửa</a>
+														</div>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-8">
+								<div class="card mt-3">
+									<div class="card-header">
+										<h5 class="card-tile mb-0">Chi tiết phiếu mượn</h5>
+									</div>
+									<div class="card-body">
+										<form>
+											<div class="row row-cols-2">
+												<div class="col">
+													<div class="mb-3">
+														<label for="maDocGia" class="form-label">Mã độc giả</label>
+														<input type="text" class="form-control" id="maDocGia">
+													</div>
+												</div>
+												<div class="col"><label for="tenDocGia" class="form-label">Tên độc
+														giả</label>
+													<input type="text" class="form-control" id="tenDocGia">
+												</div>
+											</div>
+											<div class="row row-cols-2">
+												<div class="col">
+													<div class="mb-3">
+														<label for="ngayMuon" class="form-label">Ngày mượn</label>
+														<input type="date" class="form-control" id="ngayMuon">
+													</div>
+												</div>
+												<div class="col"><label for="ngayTra" class="form-label">Ngày
+														trả</label>
+													<input type="date" class="form-control" id="ngayTra">
+												</div>
+											</div>
+											<div class="row row-cols-2">
+												<div class="col">
+													<div class="mb-3">
+														<label for="maNguoiDung" class="form-label">Mã người
+															dùng</label>
+														<input type="text" class="form-control" id="maNguoiDung">
+													</div>
+												</div>
+												<div class="col">
+													<div><label for="trangThai" class="form-label">Trạng
+															thái</label></div>
+													<div class="form-check form-check-inline pt-1">
+														<input class="form-check-input" type="radio" name="trangThai"
+															id="daTra" value="daTra">
+														<label class="form-check-label" for="daTra">Đã
+															trả</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="trangThai"
+															id="chuaTra" value="chuaTra">
+														<label class="form-check-label" for="chuaTra">Chưa
+															trả</label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<!-- Button trigger modal -->
+												<div class="row">
+													<div class="col-lg-6">
+														<button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+													data-bs-target="#themSach">Thêm
+													sách</button>
+													<!-- Modal -->
+													<div class="modal fade" id="themSach" tabindex="-1"
+													aria-labelledby="themSachLabel" aria-hidden="true">
+													<div class="modal-dialog modal-lg modal-dialog-centered">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h1 class="modal-title fs-5" id="themSachLabel">Thêm
+																	sách vào phiếu mượn</h1>
+																<button type="button" class="btn-close"
+																	data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body">
+																<form>
+																	<div class="row">
+																		<div class="col-lg-11">
+																			<div class="mb-3">
+																				<div class="row g-3 align-items-center">
+																					<div class="col-auto">
+																						<label for="timKiem"
+																							class="form-label">Tìm kiếm
+																							sách</label>
+																					</div>
+																					<div class="col-auto w-75">
+																						<input type="text"
+																							class="form-control"
+																							id="timKiem">
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-1">
+																			<div class=""><button type="button"
+																					class="btn btn-primary px-2">Tìm</button>
+																			</div>
+																		</div>
+																	</div>
+																</form>
+																<div class="card">
+																	<div class="card-header">Kết quả tìm kiếm</div>
+																	<div class="card-body">
+																		<table class="table table-striped">
+																			<thead>
+																				<tr>
+																					<th scope="col">Tên sách</th>
+																					<th scope="col">Tên tác giả</th>
+																					<th>#</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>Violet Bent Backwards Over The
+																						Grass</td>
+																					<td>Lana Del Rey</td>
+																					<td><button
+																							class="btn btn-success btn-sm">Thêm</button>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary"
+																	data-bs-dismiss="modal">Đóng</button>
+																<!-- <button type="button" class="btn btn-primary">Save</button> -->
+															</div>
+														</div>
+													</div>
+												</div>
+												
+													</div>
+													<div class="col-lg-6">
+														<button type="button" class="btn btn-secondary" >Thêm phiếu mượn</button>
+													</div>
+												</div>
+												
+													
+												<!-- Button trigger modal -->
+
+												<!-- Modal -->
+												
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="pt-2">
+									<div class="card">
+										<div class="card-header">Sách trong phiếu mượn</div>
+										<div class="card-body">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th scope="col">Tên sách</th>
+														<th scope="col">Tên tác giả</th>
+														<th>#</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Violet Bent Backwards Over The
+															Grass</td>
+														<td>Lana Del Rey</td>
+														<td><button class="btn btn-danger btn-sm">Xóa</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

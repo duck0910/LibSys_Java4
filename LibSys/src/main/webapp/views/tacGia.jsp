@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Author</title>
+<title>Tác giả</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -92,7 +92,7 @@
 								<form action="/LibSys/tacGia" modelAttribute="tacgia">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
-											<h5 class="card-tile mb-0">Authors</h5>
+											<h5 class="card-tile mb-0">Tác giả</h5>
 										</div>
 										<div class="card-body">
 											<div class="row">
@@ -102,9 +102,16 @@
 														<input class="form-control" path="Id" />
 													</div>
 													<div class="mt-3">
-														<label for="" class="form-label">Giới tính</label>
-														<input class="form-control" type="radio" >Nam
-														<input class="form-control" type="radio" >Nữ
+														<label for="" class="form-label">Giới tính</label> <br>
+														<div class="form-check form-check-inline pt-1">				
+														<input class="form-check-input" type="radio" name="gioiTinh"
+															id="Nam" value="Nam">
+														<label class="form-check-label" for="Nam">Nam</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="gioiTinh"
+															id="Nu" value="Nu">
+														<label class="form-check-label" for="Nu">Nữ</label></div>
 													</div>
 													<div class="mt-3">
 														<label for="" class="form-label">Email</label>
@@ -137,19 +144,7 @@
 								</form>
 							</div>
 							<hr>
-							<div class="col-lg-12">
-								<div class="row">
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/LibSys/tacGia/ascName">A-Z</a>
-									</div>
-									<div class="col-sm-1">
-										<a class="btn btn-secondary btn-sm"
-											href="/LibSys/tacGia/descName">Z-A</a>
-									</div>
-									
-								</div>
-							</div>
+							
 
 							<div class="card mt-3">
 								<div class="card-header">

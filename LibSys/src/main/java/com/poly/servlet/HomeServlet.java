@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet({"/house", "/pMuon", "/sach", "/tacGia"})
+@WebServlet({"/house", "/pMuon", "/sach", "/tacGia", "/theLoai", "/nxb", "/docGia", "/ngDung"})
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,9 +31,33 @@ public class HomeServlet extends HttpServlet {
 //		super.doGet(req, resp);
 	}
 	
-	protected void tacGia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void TacGia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
 		req.getRequestDispatcher("/views/tacGia.jsp").forward(req, resp);
+//		super.doGet(req, resp);
+	}
+	
+	protected void TheLoai(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/theLoai.jsp").forward(req, resp);
+//		super.doGet(req, resp);
+	}
+	
+	protected void NXB(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/nxb.jsp").forward(req, resp);
+//		super.doGet(req, resp);
+	}
+	
+	protected void DocGia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/docGia.jsp").forward(req, resp);
+//		super.doGet(req, resp);
+	}
+	
+	protected void NguoiDung(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Chuyển hướng yêu cầu đến trang "Admin-managerment.jsp"
+		req.getRequestDispatcher("/views/nguoiDung.jsp").forward(req, resp);
 //		super.doGet(req, resp);
 	}
 	
@@ -47,7 +71,15 @@ public class HomeServlet extends HttpServlet {
 		} else if (uri.contains("sach")) {
 			this.Sach(req, resp);
 		} else if (uri.contains("tacGia")) {
-			this.tacGia(req, resp);
+			this.TacGia(req, resp);
+		} else if (uri.contains("theLoai")) {
+			this.TheLoai(req, resp);
+		} else if (uri.contains("nxb")) {
+			this.NXB(req, resp);
+		} else if (uri.contains("docGia")) {
+			this.DocGia(req, resp);
+		} else if (uri.contains("ngDung")) {
+			this.NguoiDung(req, resp);
 		}
 
 //		req.setAttribute("users", dao.findAll());
