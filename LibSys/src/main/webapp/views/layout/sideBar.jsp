@@ -37,13 +37,13 @@
 				</a>
 			</li>
 			<li class="menu-item">
-				<a href="/LibSys/author" class="menu-link">
+				<a href="/LibSys/sach" class="menu-link">
 					<div class="text-capitalize" data-i18n="Authentications"><span
 							class="mdi mdi-book-open-variant pe-2"></span>quản lý sách</div>
 				</a>
 			</li>
 			<li class="menu-item">
-				<a href="/LibSys/orderApproval" class="menu-link">
+				<a href="/LibSys/tacGia" class="menu-link">
 					<div class="text-capitalize" data-i18n="Authors"><span class="mdi mdi-account-edit pe-2"></span>quản
 						lý
 						tác giả</div>

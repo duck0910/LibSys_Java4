@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Sách</title>
+<title>Đăng ký</title>
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
@@ -72,15 +72,9 @@
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
-			<!-- Menu -->
-			<jsp:include page="layout/sideBar.jsp" />
-			<!-- / Menu -->
 
 			<!-- Layout container -->
-			<div class="layout-page">
-				<!-- Navbar -->
-				<jsp:include page="layout/navBar.jsp" />
-				<!-- / Navbar -->
+
 
 				<!-- Content wrapper -->
 				<div class="content-wrapper">
@@ -89,113 +83,50 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/LibSys/sach" modelAttribute="sach">
-									<div class="card mt-3 mb-3">
-										<div class="card-header">
-											<h5 class="card-tile mb-0">Sách</h5>
-										</div>
-										<div class="card-body">
-											<div class="row">
-												<div class="col-lg-3">
-													<img alt="" src="views/static/images/single-image.jpg" style="width: 150px">
-												</div>
-												<div class="col-lg-9">
-													<div class="row">
-														<div class="col-lg-6">
-															<div class="mt-3">
-																<label for="" class="form-label">Mã sách</label>
-																<input class="form-control" path="Id" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Tác giả</label>
-																<input class="form-control" path="authorName" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Thể loại</label>
-																<input class="form-control" path="authorName" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Ngày nhập</label>
-																<input class="form-control" path="date" type="date"/>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="mt-3">
-																<label for="" class="form-label">Tên sách</label>
-																<input class="form-control" path="name" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">NXB</label>
-																<input class="form-control" path="authorName" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Số lượng</label>
-																<input class="form-control" path="authorName" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Vị trí</label>
-																<input class="form-control" path="authorName" />
-															</div>
-														</div>
-														<div class="mt-3">
-															<button class="btn btn-primary"
-																formaction="/LibSys/sach/create">Create</button>
-															<button class="btn btn-warning"
-																formaction="/LibSys/sach/update">Update</button>
-															<button class="btn btn-primary"
-																formaction="/LibSys/sach/delete">Delete</button>
-												
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
+								<form action="/LibSys/dangNhap">
+									<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+			<!-- Thông báo -->
+			<h3>${message}</h3>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Đăng ký</h5>
+						<form action="" method="post">
+							<div class="mb-3">
+								<label for="username" class="form-label">Tên đăng ký?</label> <input
+									type="text" class="form-control" id="username" name="id"
+									placeholder="Nhập username">
 							</div>
-							<hr>
-							
-							<div class="card mt-3">
-								<div class="card-header">
-									<h5 class="card-tile mb-0">Books List</h5>
-								</div>
-								<div class="card-body">
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Mã</th>
-												<th>Tên sách</th>
-												<th>Tác giả</th>
-												<th>NXB</th>
-												<th>Thể loại</th>
-												<th>Số lượng</th>
-												<th>Ngày nhập</th>
-												<th>Vị trí</th>
-												<th>Hình</th>
-												<th></th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:forEach var="sach" items="">
-												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td><a
-														href="/LibSys/sach/edit/${author.authorId}"
-														class="btn btn-sm btn-success">Edit</a></td>
-												</tr>
-											</c:forEach>
-											<!-- More user rows go here -->
-										</tbody>
-									</table>
-								</div>
+							<div class="mb-3">
+								<label for="username" class="form-label">Họ Tên?</label> <input
+									type="text" class="form-control" id="username" name="id"
+									placeholder="Nhập họ và tên">
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">Mật khẩu?</label> <input
+									type="password" class="form-control" id="password"
+									name="password" placeholder="Nhập mật khẩu">
+							</div>
+							<div class="mb-3">
+								<label for="fullname" class="form-label">Số điện thoại?</label> <input
+									type="text" class="form-control" id="sdt" name="sdt"
+									placeholder="Nhập số điện thoại">
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">Email?</label> <input
+									type="email" class="form-control" id="email" name="email"
+									placeholder="Nhập địa chỉ email">
+							</div>
+							<button type="submit" class="btn btn-primary">Đăng ký</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+									
+								</form>
 							</div>
 						</div>
 					</div>
@@ -206,7 +137,6 @@
 
 				<!-- / Footer -->
 				<div class="content-backdrop fade"></div>
-			</div>
 			<!-- Content wrapper -->
 		</div>
 		<!-- / Layout page -->
