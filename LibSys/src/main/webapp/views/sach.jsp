@@ -108,11 +108,11 @@
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">Tác giả</label>
-																<input class="form-control" path="authorName" />
+																<input class="form-control" path="tacgiaID" />
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">Thể loại</label>
-																<input class="form-control" path="authorName" />
+																<input class="form-control" path="theloaiID" />
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">Ngày nhập</label>
@@ -126,15 +126,15 @@
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">NXB</label>
-																<input class="form-control" path="authorName" />
+																<input class="form-control" path="NXBid" />
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">Số lượng</label>
-																<input class="form-control" path="authorName" />
+																<input class="form-control" path="soluong" />
 															</div>
 															<div class="mt-3">
 																<label for="" class="form-label">Vị trí</label>
-																<input class="form-control" path="authorName" />
+																<input class="form-control" path="vitri" />
 															</div>
 														</div>
 														<div class="mt-3">
@@ -176,19 +176,19 @@
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="sach" items="">
+											<c:forEach var="sach" items="sachs">
 												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+													<td>${sachs.MaSach }</td>
+													<td>${sachs.TenSach }</td>
+													<td>${sachs.MaTG }</td>
+													<td>${sachs.MaNXB }</td>
+													<td>${sachs.MaTL }</td>
+													<td>${sachs.SoLuong }</td>
+													<td>${sachs.NgayNhap }</td>
+													<td>${sachs.ViTri }</td>
+													<td>${sachs.Hinh }</td>
 													<td><a
-														href="/LibSys/sach/edit/${author.authorId}"
+														href="/LibSys/sach/edit/${sachs.MaSach}"
 														class="btn btn-sm btn-success">Edit</a></td>
 												</tr>
 											</c:forEach>

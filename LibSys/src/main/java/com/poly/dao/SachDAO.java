@@ -36,10 +36,10 @@ public class SachDAO {
 		}
 	}
 
-	public Sach remove(String id) {
+	public Sach remove(String MaSach) {
 		try {
 			em.getTransaction().begin();
-			Sach entity = this.findById(id);
+			Sach entity = this.findById(MaSach);
 			em.remove(entity);
 			em.getTransaction().commit();
 			return entity;
@@ -49,8 +49,8 @@ public class SachDAO {
 		}
 	}
 
-	public Sach findById(String id) {
-		Sach entity = em.find(Sach.class, id);
+	public Sach findById(String MaSach) {
+		Sach entity = em.find(Sach.class, MaSach);
 		return entity;
 	}
 
