@@ -163,15 +163,15 @@
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="tacgia" items="">
+											<c:forEach var="tacgia" items="tacgias">
 												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+													<td>${tacgias.MaTG }</td>
+													<td>${tacgias.TenTG }</td>
+													<td>${tacgias.GioiTinh }</td>
+													<td>${tacgias.NgaySinh }</td>
+													<td>${tacgias.Email }</td>
 													<td><a
-														href="/LibSys/tacGia/edit/${author.authorId}"
+														href="/LibSys/tacGia/edit/${tacgias.MaTG }"
 														class="btn btn-sm btn-success">Edit</a></td>
 												</tr>
 											</c:forEach>
