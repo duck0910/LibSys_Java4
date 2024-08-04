@@ -21,7 +21,7 @@
 		<ul class="menu-inner position-relative">
 			<!-- Analytics -->
 			<li class="menu-item">
-				<a href="/views" class="menu-link">
+				<a href="/" class="menu-link">
 					<i class="menu-icon tf-icons mdi mdi-home-outline"></i>
 					<div class="text-capitalize" data-i18n="Analytics">Trang chủ</div>
 				</a>
@@ -31,7 +31,7 @@
 			</li>
 			
 			<li class="menu-item">
-				<a href="/LibSys/pMuon" class="menu-link">
+				<a href="/pMuon" class="menu-link">
 					<div class="text-capitalize" data-i18n="Connections"><span
 							class="mdi mdi-account-credit-card pe-2"></span>quản lý phiếu mượn</div>
 				</a>
