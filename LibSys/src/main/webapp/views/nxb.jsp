@@ -89,7 +89,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/admin/publisher" modelAttribute="publisher">
+								<form action="/LibSys/nxb" modelAttribute="nxb">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
 											<h5 class="card-tile mb-0">Nhà xuất bản</h5>
@@ -99,23 +99,23 @@
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Mã NXB</label> <input
-															class="form-control" path="publisherId" />
+															class="form-control" path="maNXB" />
 													</div>
 												</div>
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Tên NXB</label> <input
-															class="form-control" path="publisherName" />
+															class="form-control" path="tenNXB" />
 													</div>
 												</div>
 											</div>
 											<div class="mt-3">
 												<button class="btn btn-primary"
-													formaction="/admin/publisher/create">Thêm mới</button>
+													formaction="/LibSys/nxb/create">Thêm mới</button>
 												<button class="btn btn-warning"
-													formaction="/admin/publisher/update">Cập nhật</button>
+													formaction="/LibSys/nxb/update">Cập nhật</button>
 												<button class="btn btn-primary"
-													formaction="/admin/author/delete">Xóa</button>
+													formaction="/LibSys/nxb/delete">Xóa</button>
 											</div>
 
 										</div>
@@ -137,14 +137,14 @@
 													<th>Tên</th>
 											</thead>
 											<tbody>
-												<c:forEach var="publisher" items="${publishers}">
+												<c:forEach var="nxb" items="${nxbs}">
 													<tr>
-														<td>${publisher.publisherId}</td>
-														<td>${publisher.publisherName}</td>
+														<td>${nxb.maNXB}</td>
+														<td>${nxb.tenNXB}</td>
 														<td><a
-															href="/admin/publisher/delete/${publisher.publisherId}"
+															href="/LibSys/nxb/delete/${nxb.maNXB}"
 															class="btn btn-sm btn-danger">Xóa</a> <a
-															href="/admin/publisher/edit/${publisher.publisherId}"
+															href="/LibSys/nxb/edit/${nxb.maNXB}"
 															class="btn btn-sm btn-success">Sửa</a></td>
 													</tr>
 												</c:forEach>

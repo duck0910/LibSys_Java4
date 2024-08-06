@@ -9,7 +9,7 @@ public class JpaUtils {
 
 	public static EntityManager getEntityManager() {
 		if (factory == null || !factory.isOpen()) {
-			factory = Persistence.createEntityManagerFactory("OE_Java4"); //Name in persistence.xml
+			factory = Persistence.createEntityManagerFactory("LibSys"); //Name in persistence.xml
 		}
 		return factory.createEntityManager();
 	}

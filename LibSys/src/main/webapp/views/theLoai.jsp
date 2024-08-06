@@ -90,7 +90,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/admin/author" modelAttribute="author">
+								<form action="/LibSys/theLoai" modelAttribute="theLoai">
 									<div class="card mt-3 mb-3">
 										<div class="card-header">
 											<h5 class="card-tile mb-0">Thể loại</h5>
@@ -100,23 +100,23 @@
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Mã Thể loại</label> <input
-															class="form-control" path="authorId" />
+															class="form-control" path="theloaiID" />
 													</div>
 												</div>
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Tên Thể loại</label> <input
-															class="form-control" path="authorName" />
+															class="form-control" path="theloaiName" />
 													</div>
 												</div>
 											</div>
 											<div class="mt-3">
 												<button class="btn btn-primary"
-													formaction="/admin/author/create">Thêm mới</button>
+													formaction="/LibSys/theLoai/create">Thêm mới</button>
 												<button class="btn btn-warning"
-													formaction="/admin/author/update">Cập nhật</button>
+													formaction="/LibSys/theLoai/update">Cập nhật</button>
 												<button class="btn btn-primary"
-													formaction="/admin/author/delete">Xóa</button>
+													formaction="/LibSys/theLoai/delete">Xóa</button>
 											</div>
 
 										</div>
@@ -137,15 +137,15 @@
 												<th>Tên</th>
 										</thead>
 										<tbody>
-											<c:forEach var="author" items="${authors}">
+											<c:forEach var="theLoai" items="${theLoais}">
 												<tr>
-													<td>${author.authorId}</td>
-													<td>${author.authorName}</td>
+													<td>${theLoai.maTL}</td>
+													<td>${theLoai.tenTL}</td>
 
-													<td><a href="/admin/author/delete/${author.authorId}"
-														class="btn btn-sm btn-danger">Delete</a> <a
-														href="/admin/author/edit/${author.authorId}"
-														class="btn btn-sm btn-success">Edit</a></td>
+													<td><a href="/LibSys/theLoai/delete/${theLoai.maTL}"
+														class="btn btn-sm btn-danger">Xóa</a> <a
+														href="/LibSys/theLoai/edit/${theLoai.maTL}"
+														class="btn btn-sm btn-success">Sửa</a></td>
 												</tr>
 											</c:forEach>
 											<!-- More user rows go here -->
