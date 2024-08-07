@@ -48,8 +48,8 @@ public class NhaXuatBanServlet extends HttpServlet {
 				req.setAttribute("message", "Xóa thất bại");
 			}
 		}
-		req.setAttribute("form", nhaXuatBan);
-		req.setAttribute("listUser", nhaXuatBanDAO.findAll());
+		req.setAttribute("nhaxuatban", nhaXuatBan);
+		req.setAttribute("nxbs", nhaXuatBanDAO.findAll());
 		req.getRequestDispatcher("/views/nxb.jsp").forward(req, resp);
 	}
 

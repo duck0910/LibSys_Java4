@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact"
@@ -100,13 +100,14 @@
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Mã Thể loại</label> <input
-															class="form-control" path="theloaiID" />
+															value="${theloai.maTL }" class="form-control" path="maTL" />
 													</div>
 												</div>
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Tên Thể loại</label> <input
-															class="form-control" path="theloaiName" />
+															value="${theloai.tenTL }" class="form-control"
+															path="tenTL" />
 													</div>
 												</div>
 											</div>
@@ -121,38 +122,40 @@
 
 										</div>
 									</div>
+									<hr>
+
+									<div class="card mt-3">
+										<div class="card-header">
+											<h5 class="card-tile mb-0">Danh sách Thể loại</h5>
+										</div>
+										<div class="card-body">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Mã</th>
+														<th>Tên</th>
+													</tr>
+												</thead>
+												<tbody>
+													<c:forEach var="theLoai" items="${theLoais}">
+														<tr>
+															<td>${theLoai.maTL}</td>
+															<td>${theLoai.tenTL}</td>
+
+															<td><a href="/LibSys/theLoai/delete/${theLoai.maTL}"
+																class="btn btn-sm btn-danger">Xóa</a> <a
+																href="/LibSys/theLoai/edit/${theLoai.maTL}"
+																class="btn btn-sm btn-success">Sửa</a></td>
+														</tr>
+													</c:forEach>
+													<!-- More user rows go here -->
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</form>
 							</div>
-							<hr>
 
-							<div class="card mt-3">
-								<div class="card-header">
-									<h5 class="card-tile mb-0">Danh sách Thể loại</h5>
-								</div>
-								<div class="card-body">
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Mã</th>
-												<th>Tên</th>
-										</thead>
-										<tbody>
-											<c:forEach var="theLoai" items="${theLoais}">
-												<tr>
-													<td>${theLoai.maTL}</td>
-													<td>${theLoai.tenTL}</td>
-
-													<td><a href="/LibSys/theLoai/delete/${theLoai.maTL}"
-														class="btn btn-sm btn-danger">Xóa</a> <a
-														href="/LibSys/theLoai/edit/${theLoai.maTL}"
-														class="btn btn-sm btn-success">Sửa</a></td>
-												</tr>
-											</c:forEach>
-											<!-- More user rows go here -->
-										</tbody>
-									</table>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>

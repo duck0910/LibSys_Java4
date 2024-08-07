@@ -56,7 +56,7 @@ private EntityManager em = JpaUtils.getEntityManager();
 	}
 
 	public List<TheLoai> findAll() {
-		String jpql = "SELECT o FROM Sach o";
+		String jpql = "SELECT o FROM TheLoai o";
 		TypedQuery<TheLoai> query = em.createQuery(jpql, TheLoai.class);
 		List<TheLoai> list = query.getResultList();
 		return list;

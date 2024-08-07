@@ -51,8 +51,8 @@ public class TheLoaiServlet extends HttpServlet {
 				req.setAttribute("message", "Xóa thất bại");
 			}
 		}
-		req.setAttribute("form", theLoai);
-		req.setAttribute("listUser", theLoaiDAO.findAll());
+		req.setAttribute("theloai", theLoai);
+		req.setAttribute("theLoais", theLoaiDAO.findAll());
 		req.getRequestDispatcher("/views/theLoai.jsp").forward(req, resp);
 	}
 

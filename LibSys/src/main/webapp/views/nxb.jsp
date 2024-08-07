@@ -99,13 +99,15 @@
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Mã NXB</label> <input
-															class="form-control" path="maNXB" />
+															value="${nhaxuatban.maNXB }" class="form-control"
+															path="maNXB" />
 													</div>
 												</div>
 												<div class="col-lg-6">
 													<div class="mt-3">
 														<label for="" class="form-label">Tên NXB</label> <input
-															class="form-control" path="tenNXB" />
+															value="${nhaxuatban.tenNXB }" class="form-control"
+															path="tenNXB" />
 													</div>
 												</div>
 											</div>
@@ -120,39 +122,37 @@
 
 										</div>
 									</div>
+									<hr>
+									<div class="card mt-3">
+										<div class="card-header">
+											<h5 class="card-tile mb-0">Danh sách Nhà xuất bản</h5>
+										</div>
+										<div class="card-body">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Mã</th>
+														<th>Tên</th>
+												</thead>
+												<tbody>
+													<c:forEach var="nxb" items="${nxbs}">
+														<tr>
+															<td>${nxb.maNXB}</td>
+															<td>${nxb.tenNXB}</td>
+															<td><a href="/LibSys/nxb/delete/${nxb.maNXB}"
+																class="btn btn-sm btn-danger">Xóa</a> <a
+																href="/LibSys/nxb/edit/${nxb.maNXB}"
+																class="btn btn-sm btn-success">Sửa</a></td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</form>
 
 							</div>
-							<hr>
-							<div class="col-lg-12">
-								<div class="card mt-3">
-									<div class="card-header">
-										<h5 class="card-tile mb-0">Danh sách Nhà xuất bản</h5>
-									</div>
-									<div class="card-body">
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th>Mã</th>
-													<th>Tên</th>
-											</thead>
-											<tbody>
-												<c:forEach var="nxb" items="${nxbs}">
-													<tr>
-														<td>${nxb.maNXB}</td>
-														<td>${nxb.tenNXB}</td>
-														<td><a
-															href="/LibSys/nxb/delete/${nxb.maNXB}"
-															class="btn btn-sm btn-danger">Xóa</a> <a
-															href="/LibSys/nxb/edit/${nxb.maNXB}"
-															class="btn btn-sm btn-success">Sửa</a></td>
-													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
 					<!-- / Content -->
