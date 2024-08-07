@@ -32,7 +32,7 @@ public class AccountServlet extends HttpServlet{
 			this.DangKy(req, resp);
 		} 
 
-//		req.setAttribute("users", dao.findAll());
+//		req.setAttribute("users", dao.findAll());  
 
 	}
 }
