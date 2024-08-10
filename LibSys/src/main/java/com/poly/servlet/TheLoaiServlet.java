@@ -11,13 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.poly.dao.TheLoaiDAO;
+import com.poly.DAO.TheLoaiDAO;
 import com.poly.model.TheLoai;
 
 
 @WebServlet(urlPatterns = { "/theLoai/index", "/theLoai/edit/*", "/theLoai/create", "/theLoai/update",
 		"/theLoai/delete" })
 public class TheLoaiServlet extends HttpServlet {
+
+//	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();

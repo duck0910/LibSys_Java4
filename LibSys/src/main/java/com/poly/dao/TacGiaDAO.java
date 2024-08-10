@@ -1,12 +1,12 @@
-package com.poly.dao;
+package com.poly.DAO;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import com.poly.JpaUtils.JpaUtils;
 import com.poly.model.TacGia;
-import com.poly.util.JpaUtils;
 
 public class TacGiaDAO {
 	private EntityManager em = JpaUtils.getEntityManager();	
@@ -14,6 +14,7 @@ public class TacGiaDAO {
 	public TacGia create(TacGia entity) {
 		try {
 			em.getTransaction().begin();
+//			bắt đầu một giao dịch với cơ sở dữ liệu thông qua EntityManager
 			em.persist(entity);
 			em.getTransaction().commit();
 			return entity;
@@ -21,7 +22,7 @@ public class TacGiaDAO {
 			em.getTransaction().rollback();
 			throw new RuntimeException(e);
 		}
-		
+
 	}
 
 	public TacGia update(TacGia entity) {

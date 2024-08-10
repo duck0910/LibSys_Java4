@@ -15,6 +15,7 @@ public class PhieuMuon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MaPM")
 	private int maPM;
 
@@ -29,7 +30,7 @@ public class PhieuMuon implements Serializable {
 
 	//bi-directional many-to-one association to DocGia
 	@ManyToOne
-	@JoinColumn(name="MADG")
+	@JoinColumn(name="MaDG")
 	private DocGia docGia;
 
 	//bi-directional many-to-one association to NguoiDung
@@ -37,10 +38,6 @@ public class PhieuMuon implements Serializable {
 	@JoinColumn(name="MaND")
 	private NguoiDung nguoiDung;
 
-	//bi-directional many-to-one association to Sach
-	@ManyToOne
-	@JoinColumn(name="MaSach")
-	private Sach sach;
 
 	//bi-directional many-to-one association to PhieuMuonChiTiet
 	@OneToMany(mappedBy="phieuMuon")
@@ -97,13 +94,6 @@ public class PhieuMuon implements Serializable {
 		this.nguoiDung = nguoiDung;
 	}
 
-	public Sach getSach() {
-		return this.sach;
-	}
-
-	public void setSach(Sach sach) {
-		this.sach = sach;
-	}
 
 	public List<PhieuMuonChiTiet> getPhieuMuonChiTiets() {
 		return this.phieuMuonChiTiets;

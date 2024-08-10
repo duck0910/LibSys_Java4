@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.poly.dao.DocGiaDAO;
-import com.poly.dao.NguoiDungDAO;
+import com.poly.DAO.DocGiaDAO;
+import com.poly.DAO.NguoiDungDAO;
 import com.poly.model.DocGia;
 import com.poly.model.NguoiDung;
 
 
-@WebServlet(urlPatterns = { "/nguoidung/index", "/nguoidung/edit/*", "/nguoidung/create", "/nguoidung/update", "/nguoidung/delete" })
+@WebServlet(urlPatterns = { "/ngDung/index", "/ngDung/edit/*", "/ngDung/create", "/ngDung/update", "/ngDung/delete" })
 public class NguoiDungServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
@@ -53,6 +53,6 @@ public class NguoiDungServlet extends HttpServlet {
 		}
 		req.setAttribute("docGia", nguoiDung);
 		req.setAttribute("docGias", nguoiDungDAO.findAll());
-		req.getRequestDispatcher("/views/docGia.jsp").forward(req, resp);
+		req.getRequestDispatcher("/views/nguoiDung.jsp").forward(req, resp);
 	}
 }

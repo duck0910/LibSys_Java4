@@ -1,4 +1,4 @@
-package com.poly.util;
+package com.poly.JpaUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -9,7 +9,7 @@ public class JpaUtils {
 
 	public static EntityManager getEntityManager() {
 		if (factory == null || !factory.isOpen()) {
-			factory = Persistence.createEntityManagerFactory("LibSys"); //Name in persistence.xml
+			factory = Persistence.createEntityManagerFactory("LibSys"); // tên của persistence.xml
 		}
 		return factory.createEntityManager();
 	}

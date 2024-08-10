@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact"
@@ -27,10 +27,10 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+<c:url var="url" value="/" /> 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon"
-	href="views/static/assets/img/favicon/favicon.ico" />
+	href="${url }views/static/assets/img/favicon/favicon.ico" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,32 +40,33 @@
 	rel="stylesheet" />
 
 <link rel="stylesheet"
-	href="views/static/assets/vendor/fonts/materialdesignicons.css" />
+	href="${url }views/static/assets/vendor/fonts/materialdesignicons.css" />
 
 <!-- Menu waves for no-customizer fix -->
 <link rel="stylesheet"
-	href="views/static/assets/vendor/libs/node-waves/node-waves.css" />
+	href="${url }views/static/assets/vendor/libs/node-waves/node-waves.css" />
 
 <!-- Core CSS -->
-<link rel="stylesheet" href="views/static/assets/vendor/css/core.css"
+<link rel="stylesheet" href="${url }views/static/assets/vendor/css/core.css"
 	class="template-customizer-core-css" />
-<link rel="stylesheet" href="views/static/assets/vendor/css/theme-default.css"
+<link rel="stylesheet"
+	href="${url }views/static/assets/vendor/css/theme-default.css"
 	class="template-customizer-theme-css" />
-<link rel="stylesheet" href="views/static/assets/css/demo.css" />
+<link rel="stylesheet" href="${url }views/static/assets/css/demo.css" />
 
 <!-- Vendors CSS -->
 <link rel="stylesheet"
-	href="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+	href="${url }views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 <link rel="stylesheet"
-	href="views/static/assets/vendor/libs/apex-charts/apex-charts.css" />
+	href="${url }views/static/assets/vendor/libs/apex-charts/apex-charts.css" />
 
 <!-- Page CSS -->
 
 <!-- Helpers -->
-<script src="views/static/assets/vendor/js/helpers.js"></script>
+<script src="${url }views/static/assets/vendor/js/helpers.js"></script>
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-<script src="views/static/assets/js/config.js"></script>
+<script src="${url }views/static/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -89,72 +90,80 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<form action="/LibSys/sach" modelAttribute="sach">
-									<div class="card mt-3 mb-3">
-										<div class="card-header">
-											<h5 class="card-tile mb-0">Sách</h5>
-										</div>
-										<div class="card-body">
-											<div class="row">
-												<div class="col-lg-3">
-													<img alt="" src="views/static/images/single-image.jpg" style="width: 150px">
-												</div>
-												<div class="col-lg-9">
-													<div class="row">
-														<div class="col-lg-6">
-															<div class="mt-3">
-																<label for="" class="form-label">Mã sách</label>
-																<input class="form-control" path="Id" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Tác giả</label>
-																<input class="form-control" path="tacgiaID" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Thể loại</label>
-																<input class="form-control" path="theloaiID" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Ngày nhập</label>
-																<input class="form-control" path="date" type="date"/>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="mt-3">
-																<label for="" class="form-label">Tên sách</label>
-																<input class="form-control" path="name" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">NXB</label>
-																<input class="form-control" path="NXBid" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Số lượng</label>
-																<input class="form-control" path="soluong" />
-															</div>
-															<div class="mt-3">
-																<label for="" class="form-label">Vị trí</label>
-																<input class="form-control" path="vitri" />
-															</div>
-														</div>
-														<div class="mt-3">
-															<button class="btn btn-primary"
-																formaction="/LibSys/sach/create">Create</button>
-															<button class="btn btn-warning"
-																formaction="/LibSys/sach/update">Update</button>
-															<button class="btn btn-primary"
-																formaction="/LibSys/sach/delete">Delete</button>
-												
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+								
+								<form action="${url}/sach" method="POST" enctype="multipart/form-data">
+								  <div class="card mt-3 mb-3">
+								    <div class="card-header">
+								      <h5 class="card-title mb-0">Sách</h5>
+								    </div>
+								    <div class="text-center text-success"><h6>${successMessage}</h6></div>
+								    <div class="text-center text-danger"><h6>${errorMessage}</h6></div>
+								    <div class="card-body">
+								      <div class="row">
+								        <div class="col-lg-3">
+								          <c:choose>
+										    <c:when test="${form.hinh != null && !form.hinh.isEmpty()}">
+										        <img alt="" src="${url }files/${form.hinh}" style="width: 150px">
+										    </c:when>
+										    <c:otherwise>
+										        <img alt="Default Image" src="https://file.hstatic.net/200000420363/file/no-image_faa6f03b0a49407ab8a54ba8c29cbd05.png" style="width: 150px">
+										    </c:otherwise>
+										</c:choose>
+
+								        	<input type="file" class="mt-3" name="photo" accept="image/*"/>
+								        </div>
+								        <div class="col-lg-9">
+								          <div class="row">
+								            <div class="col-lg-6">
+								              <div class="mt-3">
+								                <label for="" class="form-label">Mã sách</label>
+								                <input class="form-control" value="${form.maSach != null ? form.maSach : Id}" name="maSach" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">Tác giả</label>
+								                <input class="form-control" value="${form.tacGia.maTG}" name="tacGia" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">Thể loại</label>
+								                <input class="form-control" value="${form.theLoai.maTL}" name="theLoai" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">Ngày nhập</label>
+								                <input class="form-control" value="${form.ngayNhap}" name="ngayNhap" type="date" />
+								              </div>
+								            </div>
+								            <div class="col-lg-6">
+								              <div class="mt-3">
+								                <label for="" class="form-label">Tên sách</label>
+								                <input class="form-control" value="${form.tenSach}" name="tenSach" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">NXB</label>
+								                <input class="form-control" value="${form.nhaXuatBan.maNXB}" name="nhaXuatBan" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">Số lượng</label>
+								                <input class="form-control" value="${form.soLuong}" name="soLuong" />
+								              </div>
+								              <div class="mt-3">
+								                <label for="" class="form-label">Vị trí</label>
+								                <input class="form-control" value="${form.viTri}" name="viTri" />
+								              </div>
+								            </div>
+								            <div class="mt-3">
+								              <button class="btn btn-primary" formaction="${url}createSach">Create</button>
+								              <button class="btn btn-warning" formaction="${url }updateSach">Update</button>
+								              <button class="btn btn-primary" formaction="${url }deleteSach">Delete</button>
+								            </div>
+								          </div>
+								        </div>
+								      </div>
+								    </div>
+								  </div>
 								</form>
 							</div>
 							<hr>
-							
+
 							<div class="card mt-3">
 								<div class="card-header">
 									<h5 class="card-tile mb-0">Books List</h5>
@@ -176,19 +185,18 @@
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="sach" items="sachs">
+											<c:forEach var="sach" items="${allSach }">
 												<tr>
-													<td>${sachs.MaSach }</td>
-													<td>${sachs.TenSach }</td>
-													<td>${sachs.MaTG }</td>
-													<td>${sachs.MaNXB }</td>
-													<td>${sachs.MaTL }</td>
-													<td>${sachs.SoLuong }</td>
-													<td>${sachs.NgayNhap }</td>
-													<td>${sachs.ViTri }</td>
-													<td>${sachs.Hinh }</td>
-													<td><a
-														href="/LibSys/sach/edit/${sachs.MaSach}"
+													<td>${sach.maSach }</td>
+													<td>${sach.tenSach }</td>
+													<td>${sach.tacGia.maTG }</td>
+													<td>${sach.nhaXuatBan.maNXB }</td>
+													<td>${sach.theLoai.maTL }</td>
+													<td>${sach.soLuong }</td>
+													<td>${sach.ngayNhap }</td>
+													<td>${sach.viTri }</td>
+													<td>${sach.hinh }</td>
+													<td><a href="${url }editSach/${sach.maSach}"
 														class="btn btn-sm btn-success">Edit</a></td>
 												</tr>
 											</c:forEach>
@@ -219,24 +227,24 @@
 
 	<!-- Core JS -->
 	<!-- build:js assets/vendor/js/core.js -->
-	<script src="views/static/assets/vendor/libs/jquery/jquery.js"></script>
-	<script src="views/static/assets/vendor/libs/popper/popper.js"></script>
-	<script src="views/static/assets/vendor/js/bootstrap.js"></script>
-	<script src="views/static/assets/vendor/libs/node-waves/node-waves.js"></script>
+	<script src="${url }views/static/assets/vendor/libs/jquery/jquery.js"></script>
+	<script src="${url }views/static/assets/vendor/libs/popper/popper.js"></script>
+	<script src="${url }views/static/assets/vendor/js/bootstrap.js"></script>
+	<script src="${url }views/static/assets/vendor/libs/node-waves/node-waves.js"></script>
 	<script
-		src="views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="views/static/assets/vendor/js/menu.js"></script>
+		src="${url }views/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+	<script src="${url }views/static/assets/vendor/js/menu.js"></script>
 
 	<!-- endbuild -->
 
 	<!-- Vendors JS -->
-	<script src="views/static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+	<script src="${url }views/static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
 	<!-- Main JS -->
-	<script src="views/static/assets/js/main.js"></script>
+	<script src="${url }views/static/assets/js/main.js"></script>
 
 	<!-- Page JS -->
-	<script src="views/static/assets/js/dashboards-analytics.js"></script>
+	<script src="${url }views/static/assets/js/dashboards-analytics.js"></script>
 
 	<!-- Place this tag in your head or just before your close body tag. -->
 	<script src="https://buttons.github.io/buttons.js"></script>

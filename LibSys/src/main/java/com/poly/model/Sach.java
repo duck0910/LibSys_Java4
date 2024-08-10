@@ -33,9 +33,6 @@ public class Sach implements Serializable {
 	@Column(name="ViTri")
 	private String viTri;
 
-	//bi-directional many-to-one association to PhieuMuon
-	@OneToMany(mappedBy="sach")
-	private List<PhieuMuon> phieuMuons;
 
 	//bi-directional many-to-one association to PhieuMuonChiTiet
 	@OneToMany(mappedBy="sach")
@@ -107,27 +104,6 @@ public class Sach implements Serializable {
 		this.viTri = viTri;
 	}
 
-	public List<PhieuMuon> getPhieuMuons() {
-		return this.phieuMuons;
-	}
-
-	public void setPhieuMuons(List<PhieuMuon> phieuMuons) {
-		this.phieuMuons = phieuMuons;
-	}
-
-	public PhieuMuon addPhieuMuon(PhieuMuon phieuMuon) {
-		getPhieuMuons().add(phieuMuon);
-		phieuMuon.setSach(this);
-
-		return phieuMuon;
-	}
-
-	public PhieuMuon removePhieuMuon(PhieuMuon phieuMuon) {
-		getPhieuMuons().remove(phieuMuon);
-		phieuMuon.setSach(null);
-
-		return phieuMuon;
-	}
 
 	public List<PhieuMuonChiTiet> getPhieuMuonChiTiets() {
 		return this.phieuMuonChiTiets;

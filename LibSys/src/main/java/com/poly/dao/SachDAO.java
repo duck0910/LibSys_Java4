@@ -1,12 +1,13 @@
-package com.poly.dao;
+package com.poly.DAO;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import com.poly.JpaUtils.JpaUtils;
 import com.poly.model.Sach;
-import com.poly.util.JpaUtils;
+import com.poly.model.TacGia;
 
 public class SachDAO {
 	private EntityManager em = JpaUtils.getEntityManager();	
@@ -14,6 +15,7 @@ public class SachDAO {
 	public Sach create(Sach entity) {
 		try {
 			em.getTransaction().begin();
+//			bắt đầu một giao dịch với cơ sở dữ liệu thông qua EntityManager
 			em.persist(entity);
 			em.getTransaction().commit();
 			return entity;
@@ -21,7 +23,7 @@ public class SachDAO {
 			em.getTransaction().rollback();
 			throw new RuntimeException(e);
 		}
-		
+
 	}
 
 	public Sach update(Sach entity) {

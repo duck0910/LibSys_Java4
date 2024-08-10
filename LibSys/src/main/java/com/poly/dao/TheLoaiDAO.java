@@ -1,12 +1,12 @@
-package com.poly.dao;
+package com.poly.DAO;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import com.poly.JpaUtils.JpaUtils;
 import com.poly.model.TheLoai;
-import com.poly.util.JpaUtils;
 
 public class TheLoaiDAO {
 

@@ -16,6 +16,7 @@
 
 <meta name="description" content="" />
 <!-- Bootstrap -->
+<c:url var="url" value="/" /> 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -104,21 +105,20 @@
 												</tr>
 											</thead>
 											<tbody>
+											<c:forEach var="dsMuon" items="${dsachMuon }">
 												<tr>
 													<td>
 
-														<p class="d-flex align-items-center">Dương
-															Tuyết
-															Ngân</p>
+														<p class="d-flex align-items-center">${dsMuon.docGia.tenDG }</p>
 
 													</td>
 													<td>
 														<div>
-															<p class="d-flex align-items-center">23/06/2024</p>
+															<p class="d-flex align-items-center">${dsMuon.ngayMuon}</p>
 														</div>
 													</td>
 													<td>
-														<p class="d-flex align-items-center">Chưa trả</p>
+														<p class="d-flex align-items-center">${dsMuon.tinhTrang == 'M' ? 'Chưa Trả' : 'Đã Trả' }</p>
 													</td>
 													<td>
 														<div class="d-grid gap-2">
@@ -129,31 +129,7 @@
 														</div>
 													</td>
 												</tr>
-												<tr>
-
-													<td>Nguyễn Thanh Vinh</td>
-													<td>10/07/2024</td>
-													<td>Chưa trả</td>
-													<td>
-														<div class="d-grid gap-2">
-															<a href="/admin/book-languages/delete/${booklanguage.languageId}"
-																class="btn btn-sm btn-danger">Xóa</a> <a
-																href="/admin/book-languages/edit/${booklanguage.languageId}"
-																class="btn btn-sm btn-success">Sửa</a>
-														</div>
-												</tr>
-												<tr class="position-relative">
-													<td>Đặng Thị Kim Cương</td>
-													<td>14/05/2024</td>
-													<td>Đã trả</td>
-													<td>
-														<div class="d-grid gap-2">
-															<a href="/admin/book-languages/delete/${booklanguage.languageId}"
-																class="btn btn-sm btn-danger">Xóa</a> <a
-																href="/admin/book-languages/edit/${booklanguage.languageId}"
-																class="btn btn-sm btn-success">Sửa</a>
-														</div>
-												</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 									</div>
@@ -164,31 +140,46 @@
 								<div class="card mt-3">
 									<div class="card-header">
 										<h5 class="card-tile mb-0">Chi tiết phiếu mượn</h5>
+										<h6 class="text-center">${successMessage }</h6>
+										<h6 class="text-center">${errorMessage }</h6>
 									</div>
 									<div class="card-body">
-										<form>
+										<form action="${url }creatPmuon" method="POST">
 											<div class="row row-cols-2">
 												<div class="col">
 													<div class="mb-3">
 														<label for="maDocGia" class="form-label">Mã độc giả</label>
-														<input type="text" class="form-control" id="maDocGia">
+														<select class="form-control" name="docGia" id="maDocGia">
+													        <option value="">Chọn mã độc giả</option>
+													        <!-- Các tùy chọn mã độc giả sẽ được thêm vào đây -->
+													        <c:forEach var="dgia" items="${dsDG }">
+													        <option value="${dgia.maDG }">${dgia.maDG }</option>
+													        </c:forEach>
+													        <!-- Thêm các tùy chọn khác tại đây -->
+												  	  </select>
 													</div>
 												</div>
-												<div class="col"><label for="tenDocGia" class="form-label">Tên độc
-														giả</label>
-													<input type="text" class="form-control" id="tenDocGia">
+												<div class="col"><label for="tenDocGia" class="form-label">Mã sách</label>
+													<select class="form-control" name="sach" id="maDocGia">
+													        <option value="">Chọn mã sách</option>
+													        <!-- Các tùy chọn mã độc giả sẽ được thêm vào đây -->
+													        <c:forEach var="dSach" items="${dsSach }">
+													        <option value="${dSach.maSach }">${dSach.maSach }</option>
+													        </c:forEach>
+													        <!-- Thêm các tùy chọn khác tại đây -->
+												  	  </select>
 												</div>
 											</div>
 											<div class="row row-cols-2">
 												<div class="col">
 													<div class="mb-3">
 														<label for="ngayMuon" class="form-label">Ngày mượn</label>
-														<input type="date" class="form-control" id="ngayMuon">
+														<input type="date" name="ngayMuon" value="${currentDate }" class="form-control" id="ngayMuon">
 													</div>
 												</div>
 												<div class="col"><label for="ngayTra" class="form-label">Ngày
 														trả</label>
-													<input type="date" class="form-control" id="ngayTra">
+													<input type="date" class="form-control" name="ngayTra" id="ngayTra">
 												</div>
 											</div>
 											<div class="row row-cols-2">
@@ -196,7 +187,7 @@
 													<div class="mb-3">
 														<label for="maNguoiDung" class="form-label">Mã người
 															dùng</label>
-														<input type="text" class="form-control" id="maNguoiDung">
+														<input type="text" class="form-control" name="nguoiDung" id="maNguoiDung">
 													</div>
 												</div>
 												<div class="col">
@@ -220,9 +211,9 @@
 												<!-- Button trigger modal -->
 												<div class="row">
 													<div class="col-lg-6">
-														<button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+														<!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
 													data-bs-target="#themSach">Thêm
-													sách</button>
+													sách</button> -->
 													<!-- Modal -->
 													<div class="modal fade" id="themSach" tabindex="-1"
 													aria-labelledby="themSachLabel" aria-hidden="true">
@@ -296,7 +287,7 @@
 												
 													</div>
 													<div class="col-lg-6">
-														<button type="button" class="btn btn-secondary" >Thêm phiếu mượn</button>
+														<button type="submit" class="btn btn-success" >Thêm phiếu mượn</button>
 													</div>
 												</div>
 												

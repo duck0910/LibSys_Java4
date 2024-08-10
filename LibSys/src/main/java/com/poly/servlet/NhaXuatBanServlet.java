@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.poly.dao.NhaXuatBanDAO;
+import com.poly.DAO.NhaXuatBanDAO;
 import com.poly.model.NhaXuatBan;
 
 @WebServlet(urlPatterns = { "/nxb/index", "/nxb/edit/*", "/nxb/create", "/nxb/update", "/nxb/delete" })

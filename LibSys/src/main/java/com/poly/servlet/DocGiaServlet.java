@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.poly.dao.DocGiaDAO;
+import com.poly.DAO.DocGiaDAO;
 import com.poly.model.DocGia;
 
 @WebServlet(urlPatterns = { "/docgia/index", "/docgia/edit/*", "/docgia/create", "/docgia/update", "/docgia/delete" })
